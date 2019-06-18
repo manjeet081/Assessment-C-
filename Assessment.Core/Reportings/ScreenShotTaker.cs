@@ -26,7 +26,7 @@ namespace Assessment.Core.Reportings
             DirectoryInfo di = Directory.CreateDirectory(dir + "\\ExecutionScreenshots\\");
             finalpth = pth.Substring(0, pth.LastIndexOf("bin")) + "\\ExecutionScreenshots\\" + screenShotName + ".png";
             localpath = new Uri(finalpth).LocalPath;
-            localpath = localpath + "#\\Assessment.Tests\\ExecutionScreenshots\\" + screenShotName + ".png";
+            //localpath = localpath + "#\\Assessment.Tests\\ExecutionScreenshots\\" + screenShotName + ".png";
             screenshot.SaveAsFile(localpath);
             return localpath;
         }
