@@ -11,23 +11,12 @@ namespace Assessment.Tests
     [Binding]
     public class PassionTeaSteps
     {
-        private readonly MenuPage menuPage;
-        readonly WelcomePage welcomePage;
-        readonly CheckOutPage checkoutPage;
-        readonly Let_sTalkTeaPage let_sTalkTeaPage;
+        private readonly MenuPage menuPage=new MenuPage();
+        private readonly WelcomePage welcomePage=new WelcomePage();
+        private readonly CheckOutPage checkoutPage=new CheckOutPage();
+        private readonly Let_sTalkTeaPage let_sTalkTeaPage=new Let_sTalkTeaPage();
 
 
-        public PassionTeaSteps(MenuPage menuPage,
-            WelcomePage welcomePage,
-            CheckOutPage checkoutPage,
-            Let_sTalkTeaPage let_sTalkTeaPage
-            )
-        {
-            this.menuPage = menuPage;
-            this.welcomePage = welcomePage;
-            this.checkoutPage = checkoutPage;
-            this.let_sTalkTeaPage = let_sTalkTeaPage;
-        }
 
         [Given(@"I go to Passion Tea website")]
         public void GivenIGoToPassionTeaWebsite()
