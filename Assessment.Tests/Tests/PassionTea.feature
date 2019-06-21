@@ -5,7 +5,7 @@
 
 	Background: 
 	Given I go to Passion Tea website
-
+@Test
 Scenario: Order Green Tea
 	And I open Herbal tea collection
 	When I select Green tea and place the order

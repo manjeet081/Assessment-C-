@@ -80,9 +80,11 @@ namespace Assessment.Tests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Order Green Tea")]
+        [NUnit.Framework.CategoryAttribute("Test")]
         public virtual void OrderGreenTea()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Order Green Tea", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Order Green Tea", null, new string[] {
+                        "Test"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
