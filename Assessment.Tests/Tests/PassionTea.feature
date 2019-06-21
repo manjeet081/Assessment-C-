@@ -10,7 +10,7 @@ Scenario: Order Green Tea
 	And I open Herbal tea collection
 	When I select Green tea and place the order
 	Then I see a confirmation page
-
+@Test1
 Scenario: Order Oolong Tea with Mastercard
 	And I open Herbal tea collection
 	When I select Oolong tea and place the order with Mastercard
