@@ -125,7 +125,6 @@ namespace Assessment.Tests
                     scenario.Log(logstatus, "Snapshot below: " + scenario.AddScreenCaptureFromPath(screenShotPath));
                     break;
             }
-
         }
         [AfterScenario]
         public static void AfterScenario()
