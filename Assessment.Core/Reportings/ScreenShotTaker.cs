@@ -16,16 +16,14 @@ namespace Assessment.Core.Reportings
 
         public string Capture(IWebDriver driver, string screenShotName)
         {
-            string finalpth;
-            string localpath;
             Thread.Sleep(4000);
             ITakesScreenshot ts = (ITakesScreenshot)driver;
             Screenshot screenshot = ts.GetScreenshot();
             string pth = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
             var dir = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "");
             DirectoryInfo di = Directory.CreateDirectory(dir + "\\ExecutionScreenshots\\");
-            finalpth = pth.Substring(0, pth.LastIndexOf("bin")) + "\\ExecutionScreenshots\\" + screenShotName + ".png";
-            localpath = new Uri(finalpth).LocalPath;
+            string finalpth = pth.Substring(0, pth.LastIndexOf("bin")) + "\\ExecutionScreenshots\\" + screenShotName + ".png";
+            string localpath = new Uri(finalpth).LocalPath;
             //localpath = localpath + "#\\Assessment.Tests\\ExecutionScreenshots\\" + screenShotName + ".png";
             screenshot.SaveAsFile(localpath);
             return localpath;
