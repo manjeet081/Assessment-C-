@@ -1,5 +1,4 @@
-﻿using Assessment.Core;
-using Assessment.Core.Reportings;
+﻿using Assessment.Core.Reportings;
 using Assessment.Core.Utilities;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
@@ -7,10 +6,8 @@ using AventStack.ExtentReports.Reporter;
 using BoDi;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
-using OpenQA.Selenium;
 using System;
 using System.IO;
-using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace Assessment.Tests
@@ -28,7 +25,6 @@ namespace Assessment.Tests
         {
             _objectContainer = objectContainer;
             this.screenShotTaker = screenShotTaker;
-
         }
 
         [BeforeScenario]
@@ -49,9 +45,10 @@ namespace Assessment.Tests
             var dir = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "");
             DirectoryInfo di = Directory.CreateDirectory(dir + "\\Reports");
             var htmlReporter = new ExtentHtmlReporter(dir + "\\Reports" + "\\Automation Report" + ".html");
-            htmlReporter.LoadConfig(dir+"\\extent-config.xml");
+            htmlReporter.LoadConfig(dir + "\\extent-config.xml");
             extent.AttachReporter(htmlReporter);
         }
+
         //Delete content from SS directory
         private static void DeleteContentfromDirectory()
         {
@@ -116,16 +113,19 @@ namespace Assessment.Tests
                     scenario.Log(logstatus, "Test ended with " + logstatus + "– " + errorMessage);
                     scenario.Log(logstatus, "Snapshot below: " + scenario.AddScreenCaptureFromPath(screenShotPath));
                     break;
+
                 case TestStatus.Skipped:
                     logstatus = Status.Skip;
                     scenario.Log(logstatus, "Test ended with " + logstatus);
                     break;
+
                 default:
                     logstatus = Status.Pass;
                     scenario.Log(logstatus, "Snapshot below: " + scenario.AddScreenCaptureFromPath(screenShotPath));
                     break;
             }
         }
+
         [AfterScenario]
         public static void AfterScenario()
         {

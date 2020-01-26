@@ -1,12 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Assessment.Core.Reportings
 {
@@ -28,6 +23,5 @@ namespace Assessment.Core.Reportings
             screenshot.SaveAsFile(localpath);
             return localpath;
         }
-
     }
 }

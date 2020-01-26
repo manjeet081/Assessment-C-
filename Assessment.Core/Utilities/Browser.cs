@@ -1,6 +1,4 @@
-﻿using OpenQA.Selenium;
-
-namespace Assessment.Core.Utilities
+﻿namespace Assessment.Core.Utilities
 {
     public static class Browser
     {
